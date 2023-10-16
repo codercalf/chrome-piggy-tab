@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom Element Example</title>
+  </head>
+  <body>
+    <!-- 使用自定义按钮元素 -->
+    <custom-button></custom-button>
+
+    <script>
+      // 定义自定义元素类
+      class CustomButton extends HTMLElement {
+        constructor() {
+          super()
+          // 创建一个影子DOM根，用于封装元素的样式和内容
+          this.attachShadow({ mode: 'open' })
+
+          // 初始化点击计数
+          this.clickCount = 0
+
+          this.shadowRoot.innerHTML = `
+            <style>
+              :host {
+                display: inline-block;
+                padding: 10px;
+                background-color: #3498db;
+                color: white;
+                cursor: pointer;
+              }
+            </style>
+            <span>Click Count: ${this.clickCount}</span>
+          `
+        }
+
+        // 当元素被连接到文档时调用
+        connectedCallback() {
+          this.render()
+          this.addEventListener('click', this.handleClick)
+        }
+
+        // 当元素被从文档中移除时调用
+        disconnectedCallback() {
+          this.removeEventListener('click', this.handleClick)
+        }
+
+        // 自定义方法，用于增加点击计数
+        handleClick() {
+          this.clickCount++
+          this.render()
+        }
+
+        // 渲染按钮的外观和内容
+        render() {
+          this.shadowRoot.children[1].innerText = `Click Count: ${this.clickCount}`
+        }
+      }
+
+      // 注册自定义元素
+      customElements.define('custom-button', CustomButton)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "chrome_url_overrides": {
+    "newtab": "tab.html"
+  },
+  "manifest_version": 3,
+  "name": "yh-tab",
+  "permissions": ["storage"],
+  "version": "1.0.0"
+}
