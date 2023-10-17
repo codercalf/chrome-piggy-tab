@@ -1,88 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-    }
+      org-time::part(span) {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
 
-    org-time::part(span) {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-    }
+      body {
+        height: 100vh;
+        width: 100wh;
+        font-size: 14px;
+        line-height: 28px;
+        background-color: rgb(150, 150, 243);
+      }
 
-    body {
-      height: 100vh;
-      width: 100wh;
-      font-size: 14px;
-      line-height: 28px;
-      background-color: rgb(150, 150, 243);
-    }
+      .bg {
+        /* background-image: url(https://bing.img.run/1920x1080.php); */
+        /* background-color: pink; */
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
 
-    .bg {
-      /* background-image: url(https://bing.img.run/1920x1080.php); */
-      /* background-color: pink; */
-      height: 100%;
-      width: 100%;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
+      input {
+        outline: none;
+        height: 48px;
+        width: 200px;
+        border-radius: 25px;
+        border-width: 1px;
+        opacity: 0.5;
+        font-size: 28px;
+        padding: 0 20px;
+        vertical-align: center;
+      }
 
-    input {
-      outline: none;
-      height: 48px;
-      width: 200px;
-      border-radius: 25px;
-      border-width: 1px;
-      opacity: 0.5;
-      font-size: 28px;
-      padding: 0 20px;
-      vertical-align: center;
-    }
+      .dask-box {
+        position: absolute;
+        height: 60vh;
+        width: 300px;
+        margin-top: 15vh;
+      }
 
-    .dask-box {
-      position: absolute;
-      height: 60vh;
-      width: 300px;
-      margin-top: 15vh;
-    }
+      :root {
+        --text-color: #333333;
+        --border-radius: 8px;
+        --bg: #ffffff;
+        --bgOpa3: #ffffff64;
+        --primary: pink;
+      }
+    </style>
+  </head>
 
-    :root {
-      --text-color: #333333;
-      --border-radius: 8px;
-      --bg: #ffffff;
-      --bgOpa3: #ffffff64;
-    }
-  </style>
-</head>
+  <body>
+    <div class="bg">
+      <org-search></org-search>
+      <org-time></org-time>
 
-<body>
-  <div class="bg">
-    <!-- <input id="search" autocomplete="off" /> -->
-    <org-search></org-search>
-    <org-time></org-time>
-
-    <div class="dask-box">
-      <switch-input>aaa</switch-input>
-      <dask-item><span>ddddd</span></dask-item>
+      <div id="dask-box"></div>
     </div>
-    <!-- <p>
-      <span id="time">test</span>
-    </p> -->
-  </div>
-</body>
+  </body>
 
-<script type="module" src="src/js/search.js"></script>
-<script type="module" src="src/js/time.js"></script>
-<script type="module" src="src/js/doDask.js" <script src="src/js/main.js"></script>
+  <script></script>
 
+  <script type="module" src="src/js/search.js"></script>
+  <script type="module" src="src/js/time.js"></script>
+  <script type="module" src="src/js/doDask.js" <script src="src/js/main.js"></script>
 </html>

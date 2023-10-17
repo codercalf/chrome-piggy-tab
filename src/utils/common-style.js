@@ -10,7 +10,18 @@ export function getCommonShadowStyleEl() {
     margin: 0;
     box-sizing: border-box;
     font-size: 14px;
-}
+    box-sizing: border-box;
+    }
+    input {
+      outline: none;
+      border-width: 0px;
+    }
+    .pointer {
+      cursor: pointer;
+    }
+    .primary-color {
+      color: var(--primary);
+    }
   `
   return commonStyleEl
 }
