@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ToDo App</title>
+  <style>
+    #app {
+      text-align: center;
+    }
+
+    #todo-input {
+      padding: 8px;
+      width: 300px;
+    }
+
+    #todo-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 8px 0;
+      padding: 8px;
+      border: 1px solid #ccc;
+      background-color: #f7f7f7;
+    }
+
+    button {
+      background-color: #ff6666;
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>ToDo List</h1>
+  <div id="app">
+    <input type="text" id="todo-input" placeholder="Add a new ToDo">
+    <button onclick="addTodo()">Add</button>
+    <ul id="todo-list">
+    </ul>
+  </div>
+
+  <script>
+    const todoList = document.getElementById('todo-list');
+    const todoInput = document.getElementById('todo-input');
+
+    function addTodo() {
+      const todoText = todoInput.value.trim();
+      if (todoText === '') return;
+
+      const todoItem = document.createElement('li');
+      todoItem.innerText = todoText;
+
+      const deleteButton = document.createElement('button');
+      deleteButton.innerText = 'Delete';
+      deleteButton.onclick = function () {
+        todoList.removeChild(todoItem);
+      };
+
+      todoItem.appendChild(deleteButton);
+      todoList.appendChild(todoItem);
+      todoInput.value = '';
+    }
+  </script>
+</body>
+
+</html>

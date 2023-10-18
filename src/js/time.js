@@ -7,6 +7,14 @@ class OrgTime extends HTMLElement {
     this.attachShadow({ mode: 'open' })
 
     let textEl = document.createElement('span')
+
+    let localStyleEl = document.createElement('style')
+    localStyleEl.innerHTML = `
+      :host span {
+        font-size: 28px;
+      }
+    `
+    this.shadowRoot.appendChild(localStyleEl)
     this.textEl = textEl
     textEl.setAttribute('part', 'span')
     // 读不到外部的style，

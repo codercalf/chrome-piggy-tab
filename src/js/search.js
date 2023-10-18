@@ -8,6 +8,7 @@ class OrgSearch extends HTMLElement {
     let inputEl = document.createElement('input')
     this.inputEl = inputEl
     inputEl.autocomplete = 'off'
+    inputEl.classList.add('time')
     inputEl.addEventListener('keydown', e => this.search(e))
     this.appendChild(inputEl)
   }

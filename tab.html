@@ -1,82 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
 
-      org-time::part(span) {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
 
-      body {
-        height: 100vh;
-        width: 100wh;
-        font-size: 14px;
-        line-height: 28px;
-        background-color: rgb(150, 150, 243);
-      }
+    org-time::part(span) {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
 
-      .bg {
-        /* background-image: url(https://bing.img.run/1920x1080.php); */
-        /* background-color: pink; */
-        height: 100%;
-        width: 100%;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
+    body {
+      height: 100vh;
+      width: 100wh;
+      font-size: 14px;
+      line-height: 28px;
+      /* background-color: rgb(150, 150, 243); */
+      position: relative;
+    }
 
-      input {
-        outline: none;
-        height: 48px;
-        width: 200px;
-        border-radius: 25px;
-        border-width: 1px;
-        opacity: 0.5;
-        font-size: 28px;
-        padding: 0 20px;
-        vertical-align: center;
-      }
+    .bg {
+      background-image: url(https://bing.img.run/1920x1080.php);
+      /* background-color: pink; */
+      height: 100%;
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
 
-      .dask-box {
-        position: absolute;
-        height: 60vh;
-        width: 300px;
-        margin-top: 15vh;
-      }
+    input {
+      outline: none;
+      border-width: 0px;
+    }
 
-      :root {
-        --text-color: #333333;
-        --border-radius: 8px;
-        --bg: #ffffff;
-        --bgOpa3: #ffffff64;
-        --primary: pink;
-      }
-    </style>
-  </head>
+    .time {
+      height: 48px;
+      width: 400px;
+      border-radius: 25px;
+      opacity: 0.5;
+      font-size: 28px;
+      padding: 0 20px;
+      vertical-align: center;
+      margin: auto;
+    }
 
-  <body>
-    <div class="bg">
-      <org-search></org-search>
-      <org-time></org-time>
+    .dask-box {
+      position: absolute;
+      height: 60vh;
+      width: 300px;
+      margin-top: 15vh;
+    }
 
-      <div id="dask-box"></div>
+    :root {
+      --text-color: #333333;
+      --border-radius: 8px;
+      --bg: #ffffff;
+      --bgOpa3: #ffffff64;
+      --primary: #3aa7fc;
+    }
+
+    .time-box {
+      padding-top: 10vh;
+    }
+
+    .search-box {
+      margin-top: 30px;
+    }
+
+    #todo-box {
+      position: absolute;
+      top: 20vh;
+      margin-left: 10vw;
+      height: 60vh;
+    }
+
+    button {
+      border-width: 0;
+      background-color: var(--bgOpa3);
+      padding: 2px 4px;
+    }
+
+    #todo-input {
+      background-color: var(--bgOpa3);
+      height: 28px;
+      border-radius: 4px;
+      padding: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg">
+    <section class="time-box" style="text-align: center;"><org-time></org-time></section>
+    <section class="search-box" style="text-align: center;"><org-search></org-search></section>
+    <div id="todo-box">
+      <input type="text" id="todo-input" placeholder="Add a new ToDo">
+      <button id="add-todo">Add</button>
+      <ul id="todo-list">
+      </ul>
     </div>
-  </body>
+    <div class=" ">
+      <input type="date" />
+    </div>
+  </div>
+</body>
 
-  <script></script>
+<script></script>
 
-  <script type="module" src="src/js/search.js"></script>
-  <script type="module" src="src/js/time.js"></script>
-  <script type="module" src="src/js/doDask.js" <script src="src/js/main.js"></script>
+<script type="module" src="src/js/search.js"></script>
+<script type="module" src="src/js/time.js"></script>
+<script type="module" src="src/js/doDask.js"></script>
+<script src="src/js/main.js"></script>
+
 </html>
